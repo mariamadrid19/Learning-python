@@ -1,2 +1,2 @@
 # Learning-python
-Código para aprender python
+Código para aprender python.
