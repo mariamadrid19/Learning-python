@@ -65,9 +65,12 @@ print(stooge,"says:",quotes[stooge])
 #JSON format (JavaScript Object Notation), a human-readable text format that describes the types, values, and order of the data within it
 #Python programs can translate JSON text into Pyhton data structures
 
+from re import A
 import webbrowser
 import json
 from urllib.request import urlopen
+
+from numpy import infty
 
 print("Let's find an old website")
 site=input("Type a website URL: ")
@@ -97,4 +100,50 @@ except:
 #Python is strongly typed, the type of an object does not change, even if its value is mutable 
 
 help("keywords")
+
+x = 5
+y = x + 12
+y
+
+#When a value is not assigned to a variable, that variable is considered uninitialized
+#Variables are just names, assignments do not copy a value, they attach a name to the object that contains the data
+#The name is a reference to the thing rather than the thing itself
+
+a = 7
+print(a)
+b = a
+print(b)
+
+#To check the type of anything (a variable or a literal value). type() is a Python built-in function
+type(7)
+type(7)==int
+isinstance(7,int)
+
+#A class is the definition of an object. "class" and "type" mean the same thing
+#When an object's reference count reaches zero, it doesn't need to stick around. Garbage collector reuses the memory of things that are no longer needed
+
+#It's possible to assign a value to more than one variable name at the same time
+two = deux = zwei = 2
+two
+deux
+zwei 
+
+#Changing the value assigned to a name just makes the name point to a new object. The reference count of the old object is decremented, and the new one's incremented
+#If the object is immutable, its value cannot be changed. Both names are essentially read-only
+x=5
+x
+y=x
+y
+x=29
+x
+y
+
+#If both names point to a mutable object, the object's value can be changed via either name, and the changed value is seen with either name
+a=[2,4,6]
+b=a
+a
+b
+a[0]=99
+a
+b
 
