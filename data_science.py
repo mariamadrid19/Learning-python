@@ -147,3 +147,75 @@ a[0]=99
 a
 b
 
+#Things to do
+prince = 99
+print(prince)
+type(5)
+type(2.0)
+type(5+2.0)
+
+#The python function bool() can convert any Python data type to a boolean. However, any zero valued one is considered False
+bool(True)
+bool(1)
+bool(45)
+bool(-45)
+bool(False)
+bool(0)
+bool(0.0)
+
+#Integers are whole numbers (no fractions, no decimals). You can't have an initial 0 followed by a digit between 1 and 9.
+#Commas are NOT used as digit separators, underscores (_) are. 100_000_000 or 1_2_3, they are just ignored
+#Math operators are used to perform normal arithmetic. + - * / // (integer division, gives whole numbers as answers) % (remainder) ** (exponentiation)
+#Variables and literals can be mixed during operations
+a = 95
+a - 3 
+#Answer=92. This does NOT change the value of a (a = 95). To do that:
+a = a - 3
+#Simplified notation
+a -= 3
+#Works the same with +, *, /, // or -
+#The % has a lot of uses in Python. When it is between two number, it produces the remained when the first is divided by the second
+#The divmod() function calculates the truncated quotient and remained at once
+divmod(9,5)
+
+#Multiplication has higher precedence than addition, it's easier to just add parentheses
+#Integers are assumed to be decimal (base 10) unless you use a prefix to specify another base. 0b (base 2), 0o (base 8), 0x (base 16)
+#The chr() function converts an integer to its single-character string equivalent, ord() goes the other way
+chr(65)
+ord("A")
+
+#To change other Python data types to an integer, use the int() function. It takes one input argument and returns one value, the integerized equivalent 
+#of the input argument. This keeps the whole number and discards ny fractional parts
+int(True)
+int(False)
+#The bool() function returns the boolean equivalent of an integer
+bool(1)
+bool(0)
+
+#The int() function converts something into an integer
+a = '99' #Because it is bewteen '', it's a str
+type(a) #<class> 'str'
+int('99') #Transforms a string into an integer
+int(a) #Transforms the str into an int ('99' to 99)
+
+#The int() function will make integers from floats or strings of DIGITS, but it won't handle strings containing decimal points or exponents
+#In Python3, an int can be any size, even greater than 64 bits. There are even googols or googolplexes
+#Trying this would cause an integer overflow, where the number would need more space than the computer allowed for it, with various bad effects.
+#Python handles googoly integers with no problem 
+
+#Floating-point numbers (called floats) have decimal points or exponents (e)
+#Floats are handled similarly to integers, the operators and divmod() function are still used
+#To convert other types to floats, you use the float() function. Booleans act like tiny integers, integers gain a decimal point and strings become numbers
+float(True)
+float(False)
+float(98)
+float('97.7')
+
+#When ints and floats are mixed, Python promotes the integer values to float values
+43 + 2.
+
+#Things to do
+seconds_per_hour = (60 * 60)
+seconds_per_day = seconds_per_hour * 24
+
+
