@@ -91,3 +91,10 @@ except:
 #Pyhton, fastest growing major programming language. Popular in data science and machine learning. General-purpose, high-level language.
 #Readable, makes it easy to learn and remember. More writable
 
+#Objects are chunks of data that contain at least: a type (defines what it can do), a unique id, a value (consistent with its type), and a reference count (tracks how often the object is used)
+#Mutable = can an object be changed after creation (lists, bytearrays, sets and dictionaries are mutable)
+#When creating a variable, data types do not need to be defined
+#Python is strongly typed, the type of an object does not change, even if its value is mutable 
+
+help("keywords")
+
