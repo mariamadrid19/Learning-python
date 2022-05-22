@@ -70,7 +70,6 @@ import webbrowser
 import json
 from urllib.request import urlopen
 
-from numpy import infty
 
 print("Let's find an old website")
 site=input("Type a website URL: ")
@@ -296,3 +295,21 @@ y == 4 and y > 3
 y>3<5
 5 > y < 10
 5 > y < 10 < 100
+
+#Many things are considered Flase by Python, like null, zeros, empty strings, lists, dictonaries, etc...
+#Anything else is considered True. Python programs use these definitions of “truthiness” and “falsiness” 
+#to check for empty data structures as well as False conditions
+some_list = ["Hola",1,"Dos",3]
+some_list
+if some_list:
+    print("There's something there!")
+else:
+    print("Hey, it's empty!")
+
+letter = "o"
+if letter == "a" or letter == "e" or letter == "i" \
+    or letter == "o" or letter == "u":
+    print(letter, "is a vowel")
+else:
+    print(letter, "is not a vowel")
+
