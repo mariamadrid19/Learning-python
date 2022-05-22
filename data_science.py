@@ -219,4 +219,80 @@ seconds_per_hour = (60 * 60)
 seconds_per_day = seconds_per_hour * 24
 seconds_per_hour//seconds_per_day
 
+#Continuation characters (\) are used to continue lines, with these Python will act as if you are still in the same line
+sum = 0
+sum +=1
+sum +=2
+sum +=3
+sum +=4
+sum
+#Is exactaly the same as
+sum = 1 + \
+      2 + \
+      3 + \
+      4
+sum
+#Or the same as
+sum = (
+    1 +
+    2 +
+    3 + 
+    4)
+sum
 
+#If, elif and else, are conditionals. These statements check wether a condition is a boolean True value
+#print() is Python's built in function to print things (to your screen)
+
+disaster = True
+if disaster: 
+    print("Woe!")
+else:
+    print("Whee!")
+
+furry = False
+large = True
+if furry:
+    if large:
+        print("It's a yeti!")
+    else:
+        print("It's a cat!")
+else:
+    if large:
+        print("It's a whale!")
+    else:
+        print("It's a human. Or a hairless cat.")
+
+#In Python, indentation determines how the if and else sections are paired. 
+#If there are more than two possibilities to test, use if for the first, elif for the middle ones, and else for the last.
+color = "periwinkle"
+if color == "red":
+    print("It's a tomato")
+elif color == "green":
+    print("It's a green pepper")
+elif color == "bee purple": 
+    print("I don't know what that is, but only bee can see it")
+else: 
+    print("I've never heard of the color", color)
+
+#Equality, ==. Inequality !=. Less and greater than <, >. >= and <=. These return boolean values (T or F)
+#A single equal sign is used to assign a value to a variable. X = 5 
+x = 5
+x == 6
+x > 3
+10 < x
+x == 6 - 1
+
+#If you need to do multiple comparisons at once, you use logical operators, and, or, not. 
+#Logical operators have lower precedence than the chunks of code they're comparing. Chunks are calculated first, then compared
+x = 5
+5 <= x and x > 10
+4 < x or x > 1
+
+y = 4
+y > 2 and not y < 1
+y == 4 and y > 3
+
+#You can also "and" multiple comparisons at once
+y>3<5
+5 > y < 10
+5 > y < 10 < 100
