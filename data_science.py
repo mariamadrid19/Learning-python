@@ -65,6 +65,7 @@ print(stooge,"says:",quotes[stooge])
 #JSON format (JavaScript Object Notation), a human-readable text format that describes the types, values, and order of the data within it
 #Python programs can translate JSON text into Pyhton data structures
 
+from msilib.schema import ServiceControl
 from re import A
 import webbrowser
 import json
@@ -312,4 +313,58 @@ if letter == "a" or letter == "e" or letter == "i" \
     print(letter, "is a vowel")
 else:
     print(letter, "is not a vowel")
+
+#If you need to make a lot of comparisons, separator by or, use Python's membership operator in. It can be used with a lot of data types (sets, lists, tuples, dictionaries...)
+vowels = 'aeiou'
+letter = 'o'
+letter in vowels
+if letter in vowels:
+    print(letter, 'is a vowel')
+else:
+    print(letter, 'is not a vowel')
+ 
+
+vowel_dict = {'a':'apple', 'e':'elephany','i': 'impala', 'o':'ocelot','u':'unicorn'}
+letter in vowel_dict
+
+#The walrus operator (:=) is used to combine assignments and tests
+tweet_limit = 280
+tweet_string = "HOLAAA " * 100
+tweet_string
+diff = tweet_limit - len(tweet_string)
+if diff >= 0:
+    print("A fitting tweet")
+else:
+    print("Went over by", abs(diff))
+
+tweet_limit = 280
+tweet_string_2 = "holiii" * 100
+len(tweet_string_2)
+if diff := tweet_limit - len(tweet_string_2) >= 0:
+    print("A fitting tweet")
+else:
+    print("Went over by", abs(diff))
+
+#Things to do
+secret = 6
+guess = 7
+if guess > secret:
+    print("Too high!")
+elif guess < secret:
+    print("Too low!")
+else:
+    print("You got it!")
+
+small = True
+green = False
+if small:
+    if green:
+        print("It's a pea")
+    else:
+        print("It's a cherry")
+else:
+    if green:
+        print("It's a watermelon")
+    else: 
+        print("It's a pumpkin")
 
