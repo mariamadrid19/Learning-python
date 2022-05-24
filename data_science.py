@@ -368,3 +368,74 @@ else:
     else: 
         print("It's a pumpkin")
 
+
+#Strings are a example of a Python sequence, a sequence of characters
+#A character is the smallest unit in a writing system, it includes letters, digits, symbols, punctutation, and even white space
+#A character is defined by its meaning (how it's used), noy how it looks.
+#Strings in Python are immutable. You can't change a string in place, but you can copy parts to another string to get the same effect
+#f strings, formatting
+#raw strings, preven escape sequences in the string
+#fr strings, raw f-strings
+#u, unicode strings
+#b, bytes
+#You can have quotes inside double-quoted strings, or double quotes inside single-quoted strings
+"'Nay!' said the naysayer. 'Neigh?' said the horse."
+'A "two by four" is actually 1 1/2" x 3 1/2"'
+
+#You can also use three single quotes (''') or three double quotes ("""). Their most common use is to create multiline strings.
+'''Boom!'''
+"""Eek!"""
+'''There was a Young Lady of Norway,
+Who casually sat in a doorway;
+When the door squeezed her flat,
+She exclaimed, "What of that?"
+This courageous Young Lady of Norway.'''
+
+#The print function is meant for human output
+#Python uses the str() function internally when you call print() with objects that are not strings and when doing string formatting
+#By preceding a character with a backslash (\), you give it special meaning. The most common escape sequence is \n, means to begin a new line
+palindrome = 'A man \nA plan \nA canal: \nPanama.'
+print(palindrome)
+
+#The escape sequence \t (tab) is used to align text:
+print('\tabc')
+print('a\tbc')
+print('ab\tc')
+
+#You might also need \' or \" to specify a literal single or double quote inside a string that's quoted in the same character
+testimony = "\"I did nothing!\" he said. \"Or that other thing.\""
+testimony
+print(testimony)
+
+fact = "The world's largest rubber duck was 54'2\" by 65'7\" by 105'"
+print(fact)
+
+#If you need a literal backslash, type two of them (the first escapes the second)
+speech = 'The backslash (\\) bends over backwards to please you.'
+print(speech)
+
+#A raw string negates these escapes
+info = r'Type a \n to get a new line in a normal string'
+print(info)
+
+#You can combine literal strings or string variables in Python using the + operator
+#You can also combine literal strings just by having one after the other
+#Python does NOT add spaces when concatenating strings. They must be added explicitly. It does add a space between each argument to a print() statement a newline at the end
+#You can use the * operator to duplicate a string. It has a higher precedence than +
+
+#To get a single character from a string, specify its offset inside square brackets after the string's name
+letters = 'abcdefghijklmnopqrstuvwxyz'
+letters[0]
+letters[22]
+
+#If you specify an offset that is the length of the string or longer, you’ll get an exception
+letters[26]
+
+#Because strings are immutable, you can’t insert a character into a str or change the character at a specific index
+#You can use some combination of functions like replace() to do so. The value of the variable does not change, only the result is printed
+name = "Henny"
+name.replace('H','P')
+name
+'P'+name[1:]
+name
+
