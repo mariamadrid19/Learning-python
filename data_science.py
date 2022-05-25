@@ -463,3 +463,42 @@ letters[19::4]
 letters[:21:5]
 letters[-1::-1]
 letters[::-1]
+
+#The len() function counts characters in a string
+len(letters)
+empty = ""
+len(empty)
+
+#There are other functions specific to strings. To use a string function, type the name of the string, a dot, the name of the function, and any arguments that the function needs
+#string.function(arguments)
+
+#The split() function is used to break a string into a list of smaller strings based on some separator. A list is a sequence of values, separated by commas and surrounded by square brackets
+tasks = "get gloves,get mask, give cat vitamins,call ambulance"
+tasks.split(',')
+
+#If you don't specify a separator, split() uses any sequence of white space characters-newlines, space, and tabs
+#You still need the parentheses when calling split with no arguments - that's how Python knows you are calling a function
+
+#The join() function is the opposite of split(): it collapses a list of strings into a single string. 
+#You specify the string that glues everything together first, and then the list of strings to glue: string.join(list)
+#To join the list lines with separating newlines, you would say '\n'.join(lines)
+
+crypto_list = ['Yeti', 'Bigfoot', 'Loch Ness Monster']
+crypto_string = ', '.join  (crypto_list)
+print('Found and signing book deals:', crypto_string)
+
+#You use replace() for simple substring substitution. It returns the changed string but does not modify the original string
+#If you omit the final count argument, it replaces all instances
+
+setup = "a duck goes into a bar..."
+setup.replace("duck","goose")
+setup
+setup.replace("a ", "a famous ", 100)
+
+#The strip() function is used to get rid of whitespace characters (' '. '\t', '\n'). lstrip() strips only from the left and rstrip() from the right
+world = "   earth   "
+world.strip()
+world.strip(' ')
+world.lstrip()
+world.rstrip()
+
