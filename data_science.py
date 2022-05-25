@@ -439,3 +439,27 @@ name
 'P'+name[1:]
 name
 
+#You can extract a substring from a string by using a slice. You define a slice by using square brackets, a start offset, an end offset, and an optional step count between them
+#Some of these can be omitted. The slice will include characters from offset start to one before end
+#[:] extracts the entire sequence from start to end
+#[ start :] specifies from the start offset to the end
+#[: end] specifies from the beginning to the end offset minus 1
+#[start : end] indicates from the start offset to the end offset minus 1. 
+#[ start : end : step] extracts from the start offset to the end offset minus 1, skipping characters by step
+
+#Offsets go 0,1, and so on from the start to the right, and -1,-2 and so forth from the end to the left. 
+#If you don't specify start, the slice uses 0 (the beginning). If you don't specify end, it uses the end of the string
+
+letters = 'abcdefghijklmnopqrstuvwxyz'
+letters[:]
+letters[20:]
+letters[10:]
+letters[-3:]
+letters[18:-3]
+letters[-6:-2]
+letters[::7]
+letters[4:20:3]
+letters[19::4]
+letters[:21:5]
+letters[-1::-1]
+letters[::-1]
