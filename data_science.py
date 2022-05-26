@@ -525,3 +525,44 @@ word = 'the'
 poem.find(word)
 poem.index(word)
 
+poem.rfind(word)
+poem.rindex(word)
+poem.count(word)
+poem.isalnum()
+
+setup = 'a DUCK goes into a BAR...'
+setup.strip('.')
+#Because strings are immutable, none of these examples actually changes the string. Each example just takes the valuye, does something to it, and returns the result as a new string
+#Capitalize the first word
+setup.capitalize()
+#Capitalize all the words
+setup.title()
+#Convert all characters to uppercase
+setup.upper()
+#Convert all characters to lowercase
+setup.lower()
+#Swap uppercase and lowercase
+setup.swapcase()
+#Center the string within 30 spaces
+setup.center(30)
+#Left justify
+setup.ljust(30)
+#Right justify
+setup.rjust(30)
+#Combine functions
+setup.capitalize().center(30)
+
+#Data interpolation is used to produce reports, forms, and other outputs where appearances need to be just so
+#Three additional ways of formatting strings: old style (Python 2 and 3), new style (Python 2.6 and up), and f-strings (Python 3.6 and up)
+#OLd style
+#%s string, %d decimal integer, %x hex integer, %o octal integer, %f decimal float, %e exponential float, %g decimal or exponential float, %% a literal %
+actor = 'Richard Gere'
+cat = 'Chester'
+weight = 28
+
+"My wife's favorite actor is %s" % actor
+"Our cat %s weighs %s pounds" % (cat,weight)
+
+#The %s inside the string means to interpolate a string. The numner of % appearances in the string needs to match the number of data items after the % that follows the string
+#Multiple data must be grouped into a tuple (such as (cat, weight))
+#Even though weight is an integer, the %s inside the string converted it to a string
