@@ -67,9 +67,11 @@ print(stooge,"says:",quotes[stooge])
 
 from msilib.schema import ServiceControl
 from re import A
+import threading
 import webbrowser
 import json
 from urllib.request import urlopen
+from xml.dom.expatbuilder import theDOMImplementation
 
 
 print("Let's find an old website")
@@ -554,7 +556,8 @@ setup.capitalize().center(30)
 
 #Data interpolation is used to produce reports, forms, and other outputs where appearances need to be just so
 #Three additional ways of formatting strings: old style (Python 2 and 3), new style (Python 2.6 and up), and f-strings (Python 3.6 and up)
-#OLd style
+
+#Old style
 #%s string, %d decimal integer, %x hex integer, %o octal integer, %f decimal float, %e exponential float, %g decimal or exponential float, %% a literal %
 actor = 'Richard Gere'
 cat = 'Chester'
@@ -566,3 +569,21 @@ weight = 28
 #The %s inside the string means to interpolate a string. The numner of % appearances in the string needs to match the number of data items after the % that follows the string
 #Multiple data must be grouped into a tuple (such as (cat, weight))
 #Even though weight is an integer, the %s inside the string converted it to a string
+#You can add other values in the format string between the % and the type specifier to designate min and max wigths, alignment, and character filling
+
+#New style: {} and fomat()
+#Used for Python 3, but f-strings are better
+#Has the form format_string.format(data)
+thing = 'woodchuck'
+'{}'.format(thing)
+
+#The arguments to the format() function need to be in the order as the {} placeholders in the format string
+place = 'lake'
+'The {} is in the {}.'.format(thing, place)
+
+#You can also specify arguments by position:
+'The {1} is in the {0}.'.format(place, thing)
+
+#The arguments to format() can also be named arguments
+'The {thing} is in the {place}.'.format(thing='duck',place='bathtub')
+
