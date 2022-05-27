@@ -65,6 +65,7 @@ print(stooge,"says:",quotes[stooge])
 #JSON format (JavaScript Object Notation), a human-readable text format that describes the types, values, and order of the data within it
 #Python programs can translate JSON text into Pyhton data structures
 
+from logging import captureWarnings
 from msilib.schema import ServiceControl
 from re import A
 import threading
@@ -587,3 +588,14 @@ place = 'lake'
 #The arguments to format() can also be named arguments
 'The {thing} is in the {place}.'.format(thing='duck',place='bathtub')
 
+#F-strings
+#Recommended way of formmatting strings. To make one, type the letter f (or F) directly before the initial quote. 
+#Include variable names or expressions within curly brackets ({}) to get their values into the string
+thing = 'wereduck'
+place = 'werepond'
+f'The {thing} is in the {place}'
+
+#Expressions are also allowed inside the curly brackets
+f'The {thing.capitalize()} is in the {place.rjust(20)}'
+
+#
