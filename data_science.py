@@ -598,4 +598,20 @@ f'The {thing} is in the {place}'
 #Expressions are also allowed inside the curly brackets
 f'The {thing.capitalize()} is in the {place.rjust(20)}'
 
-#
+#The things you do inside format(), you can do inside a {} in your main string. 
+#f-strings use the same formatting langua (widith, padding, alignment) as new-style formatting, after a ':'
+f'The {thing:>20} is in the {place:.^20}'
+
+#Print variable names as well as their values. This is handy when debugging. The trick is to have a single = after the name in the {} -enclosed part of the f-string
+f'{thing=}, {place =}'
+
+#The name can actually be an expression, and it will be printed literally:
+f'{thing[-4:] =}, {place.title() = }'
+
+#The = can be followed by a : and the formatting arguments like width and alignment
+f'{thing = :>4.4}'
+
+#Things to do
+#Capitalize the word starting with m:
+song = """When an eel grabs your arm, And it causes great harm, That's - a moray!"""
+
