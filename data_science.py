@@ -69,10 +69,13 @@ from logging import captureWarnings
 from msilib.schema import ServiceControl
 from re import A
 import threading
+from types import DynamicClassAttribute
 import webbrowser
 import json
 from urllib.request import urlopen
 from xml.dom.expatbuilder import theDOMImplementation
+
+from numpy import percentile
 
 
 print("Let's find an old website")
@@ -614,4 +617,55 @@ f'{thing = :>4.4}'
 #Things to do
 #Capitalize the word starting with m:
 song = """When an eel grabs your arm, And it causes great harm, That's - a moray!"""
+song.replace(' m',' M')
 
+#Print each list question with its correctly matching answer, in the form: 
+#Q: question
+#A: answer
+questions = ["We don't serve strings around here. Are you a string?","What is said on Father's Day in the forest?", "What makes the sound 'Sis! Boom! Bah!'?"]
+answers = ["An exploding sheep.", "No, I'm a frayed knot.", "'Pop!' goes the weasel."]
+print('Q: ' + questions[0]+'\nA: ' + answers[1])
+print('Q: ' + questions[1]+'\nA: ' + answers[2])
+print('Q: ' + questions[2]+'\nA: ' + answers[0])
+
+#Write the following poem by using old-style formatting. Substitute the strings 'roast beef', 'ham', 'head', and 'clam' into this string:
+food1 = "roast beef"
+food2 = "ham"
+body_part = "head"
+animal = "clam"
+print("My kitty cat likes %s, \nMy kitty cat likes %s, \nMy kitty cat fell on his %s, \nAnd now he thinks he's a %s" % (food1, food2, body_part, animal))
+
+#Write a form letter by using new-style formatting. Save the following string as letter
+letter = "Dear {salutation} {name}, \nThank you for your letter. We are sorry that our {product} {verbed} in your {room}. Please note that it should never be used in a {room}, especially near any {animals}. \nSend us your receipt and {amount} for shipping and handling. We will send you another {product} that, in our tests, is {percent} less likely to have {verbed}. \nThank you for your support. \nSincerely, \n{spokesman} \n{job_title}"
+print(letter)
+salutation = "Mrs"
+name = "Smith"
+product = "blender"
+verbed = "exploded"
+room = "bathroom"
+animals = "cats"
+amount = "$99"
+percent = "76.59%"
+spokesman = "Jonas Wilson"
+job_title = "Explosions manager"
+letter2 = "Dear {} {}, \nThank you for your letter. We are sorry that our {} {} in your {}. Please note that it should never be used in a {}, especially near any {}. \nSend us your receipt and {} for shipping and handling. We will send you another {} that, in our tests, is {} less likely to have {}. \nThank you for your support. \nSincerely, \n{} \n{}"
+print(letter2.format(salutation, name, product, verbed, room, room, animals, amount, product, percent, verbed, spokesman, job_title))
+
+# Use % formatting to print the winning name at the state fair for a prize duck, gourd, and spitz.
+duck = "Ducky McDuckface"
+gourd = "Gourdy McGourdface"
+spitz = "Spitzy McSpitzface"
+
+'%s' % duck
+'%s' % gourd
+'%s' % spitz
+
+#Do the same, with format() formatting.
+'{}'.format(duck)
+'{}'.format(gourd)
+'{}'.format(spitz)
+
+#Once more, with feeling, and f strings.
+f'{duck}'
+f'{gourd}'
+f'{spitz}'
