@@ -616,7 +616,10 @@ f'{thing = :>4.4}'
 
 #Things to do
 #Capitalize the word starting with m:
-song = """When an eel grabs your arm, And it causes great harm, That's - a moray!"""
+song = '''When an eel grabs your arm, 
+And it causes great harm, 
+That's - a moray!'''
+
 song.replace(' m',' M')
 
 #Print each list question with its correctly matching answer, in the form: 
@@ -669,3 +672,67 @@ spitz = "Spitzy McSpitzface"
 f'{duck}'
 f'{gourd}'
 f'{spitz}'
+
+#The simplest looping mechanism in Python is while
+count = 1
+while count <= 5:
+    print(count)
+    count += 1
+#The loop continues until count is incremented from 5 to 6 at the bottom of the loop. On the next trip to the top, count <=5 is now False, and the while loop ends
+
+#Infinite loops with break statement (not sure if something within a loop might happen)
+while True:
+    stuff = input("String to capitalize (title format) [type q to quit]: ")
+    if stuff == "q":
+        break
+    print(stuff.title())
+
+#Instead of breaking out of a loop, you can skip ahead to the next iteration
+while True:
+    value = input("Integer, please [q to quit]: ")
+    if value == 'q':        #quit
+        break
+    number = int(value)
+    if number % 2 == 0:     #an even number
+        continue
+    print(number, "squared is", number*number)
+
+#You can check the use of break with else. The else would be run if the while loop completed but the object was not found
+numbers = [1, 3, 5, 8]
+position = 0
+while position < len(numbers):
+    number = numbers[position]
+    if number % 2 == 0:
+        print('Found an even number:', number)
+        break
+    position += 1
+else:
+    print('No even number found')
+
+#Iteration
+word = 'thud'
+offset = 0
+while offset < len(word):
+    print(word[offset])
+    offset += 1
+
+#There's an easier way to do this. String iteration produces one character at a time
+word = "swift"
+for letter in word:
+    print(letter)
+
+#A break in a for loop breaks out of the loop
+for letter in word:
+    if letter == "f":
+        break
+    print(letter)
+
+#for has an optional else that checks whether the for completed normally. If break was not called, the else statement is run
+#This is useful to verify that the previous for loop ran to completion instead of being stopped early with a break:
+for letter in word: 
+    if letter == "x":
+        print("Eek! An 'x'!")
+        break
+    print(letter)
+else:
+    print("No 'x' in there.")
