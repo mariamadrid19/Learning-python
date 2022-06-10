@@ -736,3 +736,64 @@ for letter in word:
     print(letter)
 else:
     print("No 'x' in there.")
+
+#The range() function returns a stream of numbers within a specified range, without first having to create and store a larga data structure such as a list or tuple
+#This lets you create huge ranges without using all the memory in your computer and crashing your program
+#You use range() similar to how you use slices: range(start, stop, step). If you omit start, the range begins at 0, the only required value is stop
+#Like zip(), range() returns an iterable object, so you need to step throuugh the values with for ... in, or convert the object to a sequence like a list
+
+for x in range (0,3):
+    print(x)
+
+list( range(0,3))
+
+for x in range (2, -1, -1):
+    print(x)
+
+list ( range(2, -1, -1))
+
+list ( range(0,11, 2))
+
+#Things to do
+#Use a for loop to print the values of the list [3, 2, 1, 0]
+for x in range (3,-1, -1):
+    print(x)
+
+#Tuples and Lists
+#They are sequence structures. They contain zero or more elements. They can be of different types. Each element can be any Python object
+#Tuples are immutable (elements can't be changed). Lists are mutable, you can insert and delete elements
+
+#The syntax to make tuples is inconsistent
+#Empty tuple
+empty_tuple = ()
+empty_tuple
+
+#To make a tuple with one or more elements, follow each element with a comma
+one_marx = 'Groucho',
+one_marx
+
+#Without the comma, you would just get the string
+one_marx = ('Groucho')
+one_marx
+type(one_marx)
+
+#If you have more than one element, follow all but the last one with a comma
+marx_tuple = 'Groucho', 'Chico', 'Harpo'
+marx_tuple
+
+#Using parentheses is a little safer, and it helps to make the tuple more visible
+marx_tuple = ('Groucho', 'Chico', 'Harpo')
+marx_tuple
+
+#You do need the parentheses for cases in which commas might also have another use
+one_marx = 'Groucho',
+type(one_marx)
+type('Groucho',)
+type(('Groucho',))
+
+#Tuples let you assign multiple variables at once. This is called tuple unpacking
+marx_tuple = ('Groucho', 'Chico', 'Harpo')
+a, b, c = marx_tuple
+a
+b
+c
