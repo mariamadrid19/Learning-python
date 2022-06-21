@@ -837,3 +837,13 @@ t1
 #When concatenating, Python makes a new tuple from the original tuples pointed to by t1 and t2, and assigned the name t1 to this new tuple
 #But the original t1 was not changed. A new one was created and the same name was reused
 
+#Lists are good for keeping track of things by their order, especially when the order and contents might change. Lists are mutable
+#You can change a list in place, add new elements, and delete or replace existing elements. The same value can occur more than once in a list
+
+#A list is made from zero or more elements, separated by commas and surrounded by square brackets
+empty_list = []
+weekdays = ['Monday','Tuesday','Wednesday','Thursday', 'Friday']
+big_birds = ['emu','ostrich','cassowary']
+first_names = ['Graham','John','Terry','Terry','Michael']
+leap_years = [2000,2004,2008]
+randomness = ['Punxsatawney', {"groundhog": "Phil"}, "Feb. 2"]
