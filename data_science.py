@@ -797,3 +797,43 @@ a, b, c = marx_tuple
 a
 b
 c
+
+#You can use tiyples to exchange values in one statement without using a temporary variable
+password = 'swordfish'
+icecream = 'tuttifrutti'
+password, icecream = icecream, password
+password
+icecream
+
+#The tuple() conversion function makes tuples from other things:
+marx_list = ['Groucho','Chico', 'Harpo']
+tuple(marx_list)
+
+#The + sign is used to concatenate tuples
+('Groucho',) + ('Chico', 'Harpo')
+
+#And the * sign is used to duplicate items
+('yada',) * 3
+
+#Comparing tuples
+a = (7, 2)
+b = (7, 2, 9)
+a == b
+a <= b
+a < b
+
+#Tuple iteration is like iteration of other types:
+words = ('fresh', 'out', 'of', 'ideas')
+for word in words:
+    print(word)
+
+#Tuples CANNOT be modified. Like strings, tuples are immutable, so you can't change an existing one.
+#You can concatenate tuples to make a new one, as you can with strings
+t1 = ('Fee', 'Fie', 'Foe')
+t2 = ('Flop',)
+t1+t2
+t1+=t2
+t1
+#When concatenating, Python makes a new tuple from the original tuples pointed to by t1 and t2, and assigned the name t1 to this new tuple
+#But the original t1 was not changed. A new one was created and the same name was reused
+
