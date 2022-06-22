@@ -847,3 +847,201 @@ big_birds = ['emu','ostrich','cassowary']
 first_names = ['Graham','John','Terry','Terry','Michael']
 leap_years = [2000,2004,2008]
 randomness = ['Punxsatawney', {"groundhog": "Phil"}, "Feb. 2"]
+
+#If you want to keep track of only unique values and don't care about order, a Python set might be a better choice than a list
+
+#The list() function is used to create empty lists
+another_empty_list = list()
+another_empty_list
+
+#The function also converts other iterable data types (such as tuples, strings, sets, and dictionaries) to lists
+list('cat')
+
+a_tuple = ('ready','fire','aim')
+list(a_tuple)
+
+#You can use split() to chop a string into a list
+talk_like_a_pirate_day = '9/19/2019'
+talk_like_a_pirate_day.split('/')
+
+#If you have more than one separator string in a row, you get an empty string as a list item
+splitme = 'a/b//c/d///e'
+splitme.split('/')
+splitme.split('//')
+splitme.split('///')
+
+#You can extract a single value from a list by specifying its offset
+marxes = ['Groucho','Chico','Harpo']
+marxes[0]
+marxes[1]
+marxes[2]
+marxes[-1]
+marxes[-2]
+marxes[-3]
+
+#You can extract subsequences with slices
+marxes[0:2]
+
+#A slice of a list is also a list
+#As with strings, slices can step by values other than one
+marxes[::2] #This example starts at the beginning and goes right by 2
+marxes[::-2] #Here we start at the end and go left by 2
+marxes[::-1] #This reverses a list
+
+#None of these examples changed the marxes list itself, because we didn't assign them to marxes
+#To reverse a list in place, use list.reverse(). This function changes the list but doesn't return its value
+marxes.reverse()
+marxes
+
+#A slice can specifiy an invalid index, but will not cause an exception, it will "snap" to the closest valid index or return nothing
+marxes[4:]
+marxes[-6:]
+marxes[-6:-2]
+marxes[-6:-4]
+
+#The traditional way of adding items to a list is to append() them one by one to the end
+marxes.append('Zeppo')
+marxes
+
+#The append() function adds items only to the end of the list. To add an item before any offset, use insert()
+#Offset 0 inserts at the beginning, one beyond the end inserts at the end, like append()
+marxes.insert(2, 'Gummo')
+marxes
+
+#Duplicate lists with *
+['blah'] * 3
+
+#You can merge one list into another by using extend()
+others = ['Karl']
+marxes.extend(others)
+marxes
+
+#You can also change the value of a list item by its offset
+marxes[3] = 'Wanda'
+marxes
+
+#You cant change a character in a string in this way, because strings are immutable. Lists are mutable, you can change how many items a list contains as well as the items themselves
+
+#You can assign values to a sublist with a slice
+numbers = [1,2,3,4]
+numbers[1:3] = [7,8,9]
+numbers
+numbers[1:3] = []
+numbers
+
+#Any Python iterable will do, separating its items and assigning them to list elements
+numbers[1:3] = (98,99,100)
+numbers
+numbers[1:3] = 'wat?'
+numbers
+
+#Delete an item by offset with del
+del marxes[-1]
+marxes
+#When you delete an item by its position in the list, the items that follow it move back to take the deleted item's space, and the list's length decreases by one
+#del is a Python statement, not a list method, it's sort of the reverse of assignment (=): it detaches a name from a Python object and can free up the object's memory if that name were the last reference to it
+
+#To delete an item by value, use remove(). If you have duplicate list items, it deletes only the first one it finds
+marxes.remove('Wanda')
+marxes
+
+#You can get an item from a list and delete it at the same time by using pop()
+#If you call pop() with an offset, it will return the item at that offset; with no argument it uses -1 
+#So, pop(0) returns the head (start) of the list, and pop() or pop(-1) returns the tail (end)
+marxes.pop()
+marxes
+marxes.pop(1)
+marxes
+
+#If you use append() to add new items to the end and pop() to remove them from the same end, you’ve implemented a data structure known as a LIFO 
+#(last in, first out) queue. Commonly known as a stack. pop(0) would create a FIFO (first in, first out) queue.
+#Useful when you want to collect data as they arrive and work with either the oldest first (FIFO) or the newest first (LIFO)
+
+#The clear() function clears a list of all its elements
+work_quotes = ['Working hard?', 'Quick question!', 'Number one priorities!']
+work_quotes
+work_quotes.clear()
+work_quotes
+
+#If you want to know the offset of an item in a list by its value, use index()
+marxes = ['Groucho', 'Chico', 'Harpo', 'Zeppo']
+marxes.index('Chico')
+
+#If the value is in the list more than once, only the offset of the first one is returned
+simpsons = ['Lisa', 'Bart', 'Marge', 'Homer', 'Bart']
+simpsons.index('Bart')
+
+#in is used to check for the existence of a value in a list
+marxes = ['Groucho', 'Chico', 'Harpo', 'Zeppo']
+'Groucho' in marxes
+'Bob' in marxes
+
+#The same value may be in more than one position in the list. As long as it's in there at least once, in will return True
+words = ['a', 'deer', 'a' 'female', 'deer']
+'deer' in words
+'male' in words
+
+#If you check for the existence of some value in a list often and don’t care about the order of items, 
+#a Python set is a more appropriate way to store and look up unique values
+
+marxes = ['Groucho', 'Chico', 'Harpo']
+marxes.count('Harpo')
+marxes.count('Bob')
+
+snl_skit = ['cheeseburger', 'cheeseburger', 'cheeseburger']
+snl_skit.count('cheeseburger')
+
+#the join() function is useful to combine items. It's a string method, not alist method. join() is the opposite of split()
+marxes = ['Groucho', 'Chico', 'Harpo']
+', '.join(marxes)
+
+friends = ['Harry', 'Hermione', 'Ron']
+separator = ' * '
+joined = separator.join(friends)
+joined
+separated = joined.split(separator)
+separated
+separated == friends
+
+#To sort the items in a list by their values rather than their offset, Python provides two functions:
+#sort() sorts the list itself in place
+#sorted() reutrns a sorted copy of the list 
+
+#If the items in the list are numeric, they're sorted by default in ascending numeric order. If they're strings, they're sorted in alphabetical order
+marxes = ['Groucho', 'Chico', 'Harpo']
+sorted_marxes = sorted(marxes)
+sorted_marxes
+
+#sorted_marxes is a new list, creating it did not change the original list
+marxes
+
+#Calling the list function sort() on the marxes list does change it
+marxes.sort()
+marxes
+
+#If the elements of a list are all the same type (such as strings), sort() will work correctly
+#Some types, like integers and floats, can be mixed because they are automatically converted to one another by Python
+numbers = [2, 1, 4.0, 3]
+numbers.sort()
+numbers
+
+#The default sort order is ascending, but you can add the argument reverse=True to set it to descending
+numbers = [2, 1, 4.0, 3]
+numbers.sort(reverse=True)
+numbers
+
+#len() returns the number of items in a list 
+marxes = ['Groucho', 'Chico', 'Harpo']
+len(marxes)
+
+#When you assign one list to more than one variable, changing the list in one place also changes it in the other
+a = [1,2,3]
+a
+b = a
+b
+a[0] = 'surprise'
+a
+b
+b[0] = 'I hate surprises'
+b
+a
